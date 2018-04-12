@@ -48,3 +48,8 @@ class Sequence {
  console.log(sequence.multipleNumbers);
  console.log(sequence.evenNumbers);
  console.log(sequence.pythagoreanTriple);
+
+ let sequence2 = new Sequence(50, 2);
+ console.log(sequence2.multipleNumbers);
+ console.log(sequence2.evenNumbers);
+ console.log(sequence2.pythagoreanTriple);
