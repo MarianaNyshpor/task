@@ -1,7 +1,7 @@
 class Sequence {
-   constructor(number, a1) {
-   	 this.number = number;
-   	 this.a1 = a1;
+  constructor(number, a1) {
+   	this.number = number;
+   	this.a1 = a1;
    }
 
    get multipleNumbers() {
@@ -49,7 +49,4 @@ class Sequence {
  console.log(sequence.evenNumbers);
  console.log(sequence.pythagoreanTriple);
 
- let sequence2 = new Sequence(50, 2);
- console.log(sequence2.multipleNumbers);
- console.log(sequence2.evenNumbers);
- console.log(sequence2.pythagoreanTriple);
+ 
