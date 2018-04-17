@@ -4,18 +4,17 @@ const outputOne = document.getElementById('numberOutputOne');
 const outputTwo = document.getElementById('numberOutputTwo');
 
 class Sequence {
-    constructor(number, a1) {
-        this.number = number;
-        this.a1 = a1;
+  constructor(number, a1) {
+    this.number = number;
+    this.a1 = a1;
+  }
+  getMultipleNumbers() {
+    let quantity = 0;
+    for (let i = this.a1; i <= this.number; i++) {
+      if (i % 3 === 0 && i % 5 !== 0) {
+        quantity++;
+      }
     }
-
-    getMultipleNumbers() {
-        let quantity = 0;
-        for (let i = this.a1; i <= this.number; i++) {
-            if (i % 3 === 0 && i % 5 !== 0) {
-                quantity++;
-            }
-        }
         return quantity;
     }
 
@@ -39,7 +38,7 @@ class Sequence {
 
                     if (a * a + b * b === c * c) {
 
-                        let tripleString = `/${a}, ${b}, ${c}`;
+                        const tripleString = `/${a}, ${b}, ${c}`;
                         arr.push(tripleString);
                     }
                 }
@@ -47,30 +46,30 @@ class Sequence {
         }
         if (arr.length > 0) {
           return arr;
-        } else {
-          return 0;
         }
+         return 0;
+        
         
     }
 }
 
 firstInputValue.addEventListener('input', ()=>{
-    if (isNaN(parseInt(firstInputValue.value))) {
+    if (isNaN(parseInt(firstInputValue.value, 10))) {
         outputOne.innerHTML = 'Enter number!';
     } else {
 
-        let sequence = new Sequence(parseInt(firstInputValue.value));
+        const sequence = new Sequence(parseInt(firstInputValue.value, 10));
         const message = `You have ${sequence.getPythagoreanTriple()} pythagorean triples before your number`;
         outputOne.innerHTML = message;
     }
 }
 );
 
-secondInputValue.addEventListener('input', ()=>{
-    if (isNaN(parseInt(secondInputValue.value))) {
+secondInputValue.addEventListener('input', () => {
+    if (isNaN(parseInt(secondInputValue.value, 10))) {
         outputTwo.innerHTML = 'Enter number!';
     } else {
-        let sequence = new Sequence(parseInt(firstInputValue.value),parseInt(secondInputValue.value));
+        const sequence = new Sequence(parseInt(firstInputValue.value, 10), parseInt(secondInputValue.value, 10));
         const message = `You have ${sequence.getMultipleNumbers()} numbers which are multiples of 3 and are not multiples of 5 
                    and ${sequence.getEvenNumbers()} squares of even numbers between your numbers`;
         outputTwo.innerHTML = message;

@@ -1,28 +1,28 @@
 
 function printError(error) {
-    console.error(error.message);
+  console.error(error.message);
 }
 
 function printResult(result, methodMessage) {
-    const message = `Your result is ${result} ${methodMessage} `;
-    console.log(message);
+  const message = `Your result is ${result} ${methodMessage} `;
+  console.log(message);
 }
 
 function get(query) {
 
-    const input1 = parseInt(query[0]);
-    const input2 = parseInt(query[1]);
+  const input1 = parseInt(query[0], 10);
+  const input2 = parseInt(query[1], 10);
 
-    if (isNaN(input1) || isNaN(input2) || query.length < 2) {
-        const typeError = new Error(`Error. Enter two numbers`);
-        printError(typeError);
-    } else {
+  if (isNaN(input1) || isNaN(input2) || query.length < 2) {
+    const typeError = new Error('Error. Enter two numbers');
+    printError(typeError);
+  } else {
 
-        class Sequence {
+    class Sequence {
 
-            constructor(number, a1) {
-                this.number = number;
-                this.a1 = a1;
+      constructor(number, a1) {
+        this.number = number;
+        this.a1 = a1;
             }
 
             getMultipleNumbers() {
@@ -55,10 +55,10 @@ function get(query) {
 
                         for (let c = b + 1; c <= this.number; c++) {
 
-                            if (a * a + b * b === c * c) {
+                            if ((a * a) + (b * b) === c * c) {
 
-                                let tripleString = `/${a}, ${b}, ${c}`;
-                                arr.push(tripleString, );
+                                const tripleString = `/${a}, ${b}, ${c}`;
+                                arr.push(tripleString);
                             }
                         }
                     }
@@ -68,7 +68,7 @@ function get(query) {
             }
         }
 
-        let sequence = new Sequence(input1,input2);
+        const sequence = new Sequence(input1, input2);
         sequence.getMultipleNumbers();
         sequence.getEvenNumbers();
         sequence.getPythagoreanTriple();
